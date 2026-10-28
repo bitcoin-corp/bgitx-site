@@ -1,0 +1,13 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=Space+Grotesk:wght@600;700&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet"><style>
+body{margin:0;width:1200px;height:630px;background:#000;color:#f4f1e8;font-family:'IBM Plex Sans';display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:40px;padding:0 70px;box-sizing:border-box;background-image:radial-gradient(closest-side at 80% 50%,rgba(245,184,0,.18),transparent)}
+.k{font:600 18px 'Space Grotesk';letter-spacing:.16em;color:#7c7a73;text-transform:uppercase}
+h1{font:700 112px/.95 'Space Grotesk';letter-spacing:-.045em;margin:22px 0 26px}
+h1 span{background:linear-gradient(180deg,#ffe58a,#ffd24d 55%,#c98f00);-webkit-background-clip:text;color:transparent}
+p{font-size:26px;color:#a9a69c;margin:0;max-width:560px;line-height:1.4}
+.pr{background:#0b0c0f;border:1px solid #1f2127;border-radius:22px;padding:30px;box-shadow:0 40px 80px -40px rgba(245,184,0,.45)}
+.w{font:500 16px 'IBM Plex Mono';color:#7c7a73;display:flex;gap:12px;align-items:center}.w i{width:26px;height:26px;border-radius:8px;background:linear-gradient(180deg,#ffe58a,#c98f00)}
+h4{font:600 26px/1.25 'Space Grotesk';margin:16px 0 18px}
+.d{font:500 15px/1.9 'IBM Plex Mono';border-radius:10px;overflow:hidden}.d span{display:block;padding:0 12px}.m{background:rgba(248,113,113,.1);color:#fca5a5}.p{background:rgba(74,222,128,.1);color:#86efac}
+.b{display:flex;gap:12px;margin-top:22px}.b span{flex:1;text-align:center;padding:14px 0;border-radius:99px;font:600 17px 'Space Grotesk';border:1px solid #1f2127;color:#a9a69c}.b .o{background:linear-gradient(180deg,#ffe58a,#ffd24d 55%,#c98f00);color:#000;border:0}
+</style></head><body><div><div class="k">bGitX · on bWalletX</div><h1>Your code,<br><span>on b.</span></h1><p>Kintsugi opens pull requests. Nothing merges without your OK.</p></div>
+<div class="pr"><div class="w"><i></i>kintsugi opened PR #42</div><h4>Fix double booking on overlapping slots</h4><div class="d"><span class="m">- if (start &gt; end) return ok</span><span class="p">+ if (overlaps(slot, taken)) return conflict</span><span class="p">+ test: rejects overlapping slots</span></div><div class="b"><span>Ask for changes</span><span class="o">OK, merge</span></div></div></body></html>
