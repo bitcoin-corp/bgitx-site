@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>bGitX · Your code, on b</title>
 <meta name="description" content="bGitX: connect your GitHub, open a room for each repo in bChatX, agree terms with bSignX, and let Kintsugi fix and build. Nothing merges without your OK.">
 <link rel="canonical" href="https://bgitx.com/">
@@ -22,239 +22,19 @@
 <meta name="theme-color" content="#000000">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#000;--ink:#f4f1e8;--muted:#a9a69c;--dim:#7c7a73;
-  --gold:#f5b800;--gold-hi:#ffd24d;--gold-lo:#c98f00;
-  --card:#0d0e11;--edge:#1f2127;--edge-gold:rgba(255,210,77,.28);
-  --grad:linear-gradient(180deg,#ffe58a,#ffd24d 55%,#c98f00);
-  --r:18px;--hf:'Space Grotesk',system-ui,sans-serif;--bf:'IBM Plex Sans',system-ui,sans-serif;--mf:'IBM Plex Mono',ui-monospace,monospace;
-  --ease:cubic-bezier(.2,.8,.2,1);
-}
-*{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
-html,body{overflow-x:clip}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--bf)}
-a{color:var(--gold-hi);text-underline-offset:3px}
-a:focus-visible{outline:2px solid var(--gold-hi);outline-offset:3px;border-radius:8px}
-.wrap{max-width:1120px;margin:0 auto;padding:0 16px}
-h1,h2,h3{font-family:var(--hf);letter-spacing:-.025em;margin:0}
-.gold{color:var(--gold-hi)}
-.ink{color:var(--ink);font-weight:500}
-
-.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
-.brand{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font:700 21px/1 var(--hf);letter-spacing:-.02em}
-.brand img{display:block}
-.nav-links{display:flex;gap:22px;align-items:center}
-.nav-links a:not(.btn){color:var(--muted);text-decoration:none;font-size:15px}
-.nav-links a:not(.btn):hover{color:var(--ink)}
-@media (max-width:640px){.nav-links .hide-s{display:none}}
-
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 22px;border-radius:999px;font:600 16px/1 var(--hf);text-decoration:none;transition:transform .16s var(--ease),box-shadow .16s var(--ease),border-color .16s}
-.btn-gold{background:var(--grad);color:#000;box-shadow:0 0 0 1px rgba(255,210,77,.35),0 10px 30px -10px rgba(245,184,0,.6),inset 0 1px 0 rgba(255,255,255,.5)}
-.btn-gold:hover{transform:translateY(-1px);box-shadow:0 0 0 1px rgba(255,210,77,.5),0 14px 36px -10px rgba(245,184,0,.75),inset 0 1px 0 rgba(255,255,255,.5)}
-.btn-gold:active{transform:none}
-.btn-ghost{color:var(--ink);border:1px solid var(--edge)}
-.btn-ghost:hover{border-color:var(--edge-gold)}
-.nav .btn{height:40px;padding:0 16px;font-size:15px}
-
-.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;padding:56px 16px 88px}
-.hero>*{min-width:0}
-.eyebrow{font:500 13px/1 var(--hf);letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin:0 0 20px}
-.hero h1{font-size:clamp(52px,8.4vw,96px);line-height:.96;letter-spacing:-.045em}
-.hero h1 span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.lede{font-size:19px;color:var(--muted);max-width:520px;margin:24px 0 32px}
-.ctas{display:flex;flex-wrap:wrap;gap:12px}
-.hint{margin:18px 0 0;font-size:14px;color:var(--dim)}
-@media (max-width:900px){.hero{grid-template-columns:1fr;gap:28px;padding:28px 16px 64px}}
-
-section{padding:88px 0;border-top:1px solid #121317}
-.kicker{font:500 13px/1 var(--hf);letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin:0 0 16px}
-h2{font-size:clamp(32px,5vw,52px);line-height:1.04;max-width:760px}
-.sub{color:var(--muted);font-size:18px;max-width:640px;margin:18px 0 0}
-.note{color:var(--dim);font-size:14px;margin:24px 0 0;max-width:720px}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
-@media (max-width:860px){.grid3{grid-template-columns:1fr}}
-.card{position:relative;background:var(--card);border:1px solid var(--edge);border-radius:var(--r);padding:28px 24px 26px}
-.card h3{font-size:22px;margin:0 0 10px}
-.card p{margin:0;color:var(--muted)}
-.tag{display:inline-block;font:600 11px/1 var(--hf);letter-spacing:.06em;text-transform:uppercase;padding:5px 9px;border-radius:999px;white-space:nowrap}
-.tag.live{background:var(--gold);color:#000}
-.tag.test{border:1px solid var(--gold);color:var(--gold-hi)}
-.tag.soon{border:1px solid #4a4840;color:var(--muted)}
-
-.steps{list-style:none;padding:0;margin:48px 0 0;display:grid;gap:12px;counter-reset:s}
-.steps li{display:grid;grid-template-columns:56px 1fr auto;gap:16px;align-items:start;background:var(--card);border:1px solid var(--edge);border-radius:var(--r);padding:22px}
-.steps li::before{counter-increment:s;content:counter(s);font:700 28px/1 var(--hf);color:var(--gold-hi)}
-.steps h3{font-size:20px;margin:0 0 6px}
-.steps p{margin:0;color:var(--muted)}
-@media (max-width:560px){.steps li{grid-template-columns:36px 1fr}.steps li .tag{grid-column:2;justify-self:start}}
-
-.points{list-style:none;padding:0;margin:28px 0 0;display:grid;gap:14px;max-width:760px}
-.points li{display:grid;grid-template-columns:20px 1fr;gap:10px;color:var(--muted)}
-.points li b{color:var(--ink);font-weight:500}
-.dot{width:8px;height:8px;border-radius:50%;background:var(--gold);margin-top:9px}
-
-.status{list-style:none;padding:0;margin:40px 0 0;max-width:820px;border-top:1px solid var(--edge)}
-.status li{display:grid;grid-template-columns:84px 1fr;gap:16px;padding:18px 0;border-bottom:1px solid var(--edge);align-items:start}
-.status li .tag{justify-self:start;margin-top:4px}
-.status li p{margin:0;color:var(--muted)}
-.status li p b{color:var(--ink);font-weight:500}
-.status li .where{display:block;font-size:13px;color:var(--dim);margin-top:4px}
-
-.links{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:40px}
-@media (max-width:860px){.links{grid-template-columns:1fr}}
-.links a{display:block;padding:22px;background:var(--card);border:1px solid var(--edge);border-radius:16px;text-decoration:none;color:var(--muted);transition:border-color .16s,transform .16s var(--ease)}
-.links a:hover{border-color:var(--edge-gold);transform:translateY(-2px)}
-.links b{display:block;font:600 19px/1.2 var(--hf);color:var(--ink);margin-bottom:6px}
-.links b i{font-style:normal;color:var(--gold-hi)}
-
-.cta-end{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
-
-footer{border-top:1px solid #121317;padding:40px 0 56px;color:var(--dim);font-size:14px}
-.foot{display:flex;flex-wrap:wrap;gap:16px 28px;justify-content:space-between;align-items:center}
-.foot nav{display:flex;flex-wrap:wrap;gap:18px}
-.foot nav a{color:var(--muted);text-decoration:none}
-.foot nav a:hover{color:var(--ink)}
-.legal{margin:20px 0 0;max-width:760px}
-
-.bwx-strip{background:#0a0a0b;border-bottom:1px solid rgba(255,210,77,.16);font:500 13px/1 var(--bf)}
-.bwx-strip a{display:flex;align-items:center;justify-content:center;gap:8px;min-height:36px;padding:0 16px;color:#cfcabd;text-decoration:none;letter-spacing:.01em}
-.bwx-strip svg{width:12px;height:16px;flex:none;display:block}
-.bwx-strip b{color:#ffd24d;font-weight:600}
-.bwx-strip .bwx-go{color:#7c7a73;transition:transform .16s var(--ease),color .16s}
-.bwx-strip a:hover{color:#f4f1e8}
-.bwx-strip a:hover .bwx-go{color:#ffd24d;transform:translateX(2px)}
-.bwx-strip a:focus-visible{outline:2px solid #ffd24d;outline-offset:-4px;border-radius:8px}
-
-/* hero film: connect, mint, room, invite, terms, kintsugi */
-.flm{position:relative;justify-self:center;width:100%;max-width:460px;container-type:inline-size}
-.flm::before{content:"";position:absolute;inset:-8%;z-index:-1;background:radial-gradient(closest-side,rgba(245,184,0,.16),transparent 70%)}
-.stg{position:relative;aspect-ratio:1/1.02;background:linear-gradient(180deg,#0f1014,#08090b);border:1px solid var(--edge);border-radius:22px;overflow:hidden;box-shadow:0 40px 80px -40px rgba(245,184,0,.35)}
-.stg *{box-sizing:border-box}
-.bar{position:absolute;top:0;left:0;right:0;height:11cqw;display:flex;align-items:center;gap:2cqw;padding:0 5cqw;border-bottom:1px solid var(--edge);font:500 2.8cqw/1 var(--mf);color:var(--dim)}
-.bar i{width:2cqw;height:2cqw;border-radius:50%;background:#24262c}
-.bar span{margin-left:auto;color:var(--muted)}
-.ly{position:absolute;inset:16cqw 6cqw 6cqw;opacity:0;transform:translateY(2cqw);transition:opacity .45s var(--ease),transform .45s var(--ease);pointer-events:none}
-.stg[data-s="1"] .l1,.stg[data-s="2"] .l2,.stg[data-s="3"] .l3,.stg[data-s="4"] .l3,.stg[data-s="5"] .l5,.stg[data-s="6"] .l6,.stg[data-s="7"] .l6{opacity:1;transform:none}
-.hd{font:600 4.4cqw/1.15 var(--hf);margin:0 0 1.2cqw;color:var(--ink)}
-.cap{font:500 2.6cqw/1.3 var(--mf);color:var(--dim);letter-spacing:.04em;margin:0 0 4cqw}
-/* 1 connect */
-.repo{display:flex;align-items:center;gap:2.6cqw;padding:3cqw 3.4cqw;border:1px solid var(--edge);border-radius:2.6cqw;background:#111216;margin-bottom:2cqw;font:500 3.3cqw/1 var(--mf);color:var(--muted)}
-.repo svg{width:4cqw;height:4cqw;flex:none;color:var(--dim)}
-.repo .ck{margin-left:auto;width:5cqw;height:5cqw;border-radius:1.4cqw;border:1px solid #33353c;display:grid;place-items:center;color:#000;font:700 3cqw/1 var(--hf);transition:background .3s,border-color .3s}
-.stg[data-s="1"] .repo .ck{animation:tick .35s var(--ease) both}
-.stg[data-s="1"] .repo:nth-child(4) .ck{animation-delay:.6s}.stg[data-s="1"] .repo:nth-child(5) .ck{animation-delay:1.1s}.stg[data-s="1"] .repo:nth-child(6) .ck{animation-delay:1.6s}
-@keyframes tick{from{background:transparent;color:transparent}to{background:var(--gold-hi);border-color:var(--gold-hi);color:#000}}
-.repo.off .ck{animation:none!important}
-/* 2 mint */
-.snap{border:1px solid var(--edge-gold);border-radius:3cqw;background:linear-gradient(180deg,#1a1503,#0d0e11);padding:4cqw}
-.snap .row{display:flex;justify-content:space-between;font:500 2.8cqw/1.8 var(--mf);color:var(--muted)}
-.snap .row b{color:var(--ink);font-weight:500}
-.lock{display:inline-flex;align-items:center;gap:1.4cqw;margin-top:3cqw;padding:1.4cqw 2.4cqw;border-radius:5cqw;background:var(--gold);color:#000;font:700 2.4cqw/1 var(--hf);letter-spacing:.08em}
-.lock svg{width:3cqw;height:3cqw}
-.blks{display:flex;align-items:center;margin-top:6cqw}
-.blk{flex:0 0 auto;width:13cqw;height:9cqw;border-radius:1.6cqw;border:1px solid #2a2c33;background:#111216;display:grid;place-items:center;font:500 2cqw/1 var(--mf);color:var(--dim)}
-.lnk{flex:1;height:1px;background:#2a2c33}
-.blk.nw{width:17cqw;border-color:var(--gold);color:var(--gold-hi);background:linear-gradient(180deg,#2a2104,#141004);opacity:.15;transform:translateY(-4cqw) scale(.85);transition:opacity .5s .9s,transform .7s var(--ease) .9s}
-.stg[data-s="2"] .blk.nw{opacity:1;transform:none;box-shadow:0 0 4cqw -1cqw rgba(245,184,0,.7)}
-.stg[data-s="2"] .snap .row{animation:typ .5s var(--ease) both}
-.stg[data-s="2"] .snap .row:nth-child(2){animation-delay:.25s}.stg[data-s="2"] .snap .row:nth-child(3){animation-delay:.5s}
-@keyframes typ{from{opacity:0;clip-path:inset(0 100% 0 0)}to{opacity:1;clip-path:inset(0 0 0 0)}}
-/* 3-4 room + invite */
-.room{border:1px solid var(--edge);border-radius:3cqw;background:#0b0c0f;overflow:hidden}
-.room .rh{display:flex;align-items:center;gap:2cqw;padding:3cqw 3.4cqw;border-bottom:1px solid var(--edge);font:600 3.4cqw/1 var(--hf)}
-.room .rh em{font-style:normal;color:var(--gold-hi)}
-.ppl{margin-left:auto;display:flex}
-.av{width:6cqw;height:6cqw;border-radius:50%;border:.5cqw solid #0b0c0f;margin-left:-1.6cqw;display:grid;place-items:center;font:700 2.4cqw/1 var(--hf);color:#000}
-.av.y{background:var(--gold-hi)}
-.av.s{background:#7dd3fc;opacity:0;transform:scale(.4);transition:opacity .3s,transform .4s var(--ease)}
-.av.a{background:#c4b5fd;opacity:0;transform:scale(.4);transition:opacity .3s .5s,transform .4s var(--ease) .5s}
-.stg[data-s="4"] .av.s,.stg[data-s="4"] .av.a{opacity:1;transform:none}
-.msgs{padding:3cqw 3.4cqw;display:grid;gap:2cqw}
-.msg{font:400 2.9cqw/1.4 var(--bf);color:var(--muted);padding:2cqw 2.6cqw;border-radius:2.4cqw;background:#15161b;max-width:88%}
-.msg b{color:var(--ink);font-weight:600}
-.msg.j{opacity:0;transition:opacity .4s}
-.stg[data-s="4"] .msg.j{opacity:1}
-.stg[data-s="4"] .msg.j2{transition-delay:.6s}
-.stg[data-s="4"] .msg.j3{transition-delay:1.2s}
-.msg.sys{background:none;padding:0;font:500 2.4cqw/1.3 var(--mf);color:var(--dim)}
-/* 5 terms */
-.pp{background:#fffaf0;color:#17140c;border-radius:2.6cqw;padding:3.4cqw;font-size:2.9cqw;line-height:1.3}
-.pp small{font:500 2cqw/1 var(--mf);color:#8a6300;letter-spacing:.06em}
-.pp strong{display:block;font:600 4cqw/1.15 var(--hf);margin:1cqw 0 2cqw}
-.pp .t{display:flex;justify-content:space-between;gap:2cqw;padding:1.4cqw 0;border-top:1px solid #eadfc4}
-.sgs{display:grid;grid-template-columns:1fr 1fr;gap:2cqw;margin-top:3cqw}
-.sg{border:1px solid var(--edge);border-radius:2cqw;padding:2.4cqw;font:500 2.6cqw/1.3 var(--bf);color:var(--dim);transition:border-color .3s,color .3s}
-.sg b{display:block;font:600 3cqw/1 var(--hf);color:var(--muted);margin-bottom:1cqw}
-.stg[data-s="5"] .sg{animation:sgn .4s var(--ease) both}
-.stg[data-s="5"] .sg:nth-child(1){animation-delay:.9s}.stg[data-s="5"] .sg:nth-child(2){animation-delay:1.8s}
-@keyframes sgn{to{border-color:var(--edge-gold);color:var(--gold-hi)}}
-/* 6-7 kintsugi PR */
-.pr{border:1px solid var(--edge);border-radius:3cqw;background:#0b0c0f;padding:3.6cqw}
-.pr .who{display:flex;align-items:center;gap:2cqw;font:500 2.6cqw/1 var(--mf);color:var(--dim)}
-.pr .who i{width:5cqw;height:5cqw;border-radius:1.4cqw;background:var(--grad);display:block}
-.pr h4{margin:2.6cqw 0 1cqw;font:600 3.8cqw/1.25 var(--hf);color:var(--ink)}
-.diff{margin:3cqw 0 0;border-radius:2cqw;overflow:hidden;font:500 2.5cqw/1.75 var(--mf)}
-.diff span{display:block;padding:0 2cqw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.diff .m{background:rgba(248,113,113,.1);color:#fca5a5}
-.diff .p{background:rgba(74,222,128,.1);color:#86efac}
-.ci{margin-top:2.6cqw;font:500 2.5cqw/1 var(--mf);color:var(--dim)}
-.ci b{color:#86efac;font-weight:500}
-.mg{display:flex;gap:2cqw;margin-top:3.4cqw}
-.mg span{flex:1;text-align:center;padding:2.6cqw 0;border-radius:6cqw;font:600 3cqw/1 var(--hf);border:1px solid var(--edge);color:var(--muted)}
-.mg .ok{background:var(--grad);color:#000;border:0;transition:box-shadow .3s}
-.stg[data-s="7"] .mg .ok{box-shadow:0 0 0 .6cqw rgba(255,210,77,.3)}
-.done{margin-top:2.6cqw;font:600 2.9cqw/1.2 var(--hf);color:var(--gold-hi);opacity:0;transition:opacity .4s .3s}
-.wt{margin-top:2.6cqw;font:500 2.6cqw/1.2 var(--bf);color:var(--muted);transition:opacity .3s}
-.stg[data-s="7"] .done{opacity:1}
-.stg[data-s="7"] .wt{display:none}
-/* beat rail */
-.rail{list-style:none;margin:14px 0 0;padding:0;display:grid;grid-template-columns:repeat(6,1fr);gap:6px}
-.rail li{position:relative;padding-top:10px;font:600 12px/1.25 var(--hf);color:var(--dim);transition:color .3s}
-.rail li::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;border-radius:2px;background:#22242a}
-.rail li::after{content:"";position:absolute;top:0;left:0;height:2px;width:0;border-radius:2px;background:var(--gold-hi)}
-.rail li.on{color:var(--ink)}
-.rail li.on::after{width:100%;transition:width var(--dur,3s) linear}
-.rail li.dn::after{width:100%}
-@media (max-width:420px){.rail li{font-size:10.5px}}
-@media (prefers-reduced-motion:no-preference){.flm{animation:arrive .9s var(--ease) both}}
-@keyframes arrive{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
-@media (prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  .stg *,.bwx-strip *{animation:none!important;transition:none!important}
-  .rail li{color:var(--ink)}.rail li::after{width:100%}
-}
-</style>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/site.css">
+<link rel="stylesheet" href="/shell.css">
 </head>
 <body>
-<aside class="bwx-strip" aria-label="bWalletX"><a href="https://www.bwalletx.com"><svg viewBox="23 8 74 100" aria-hidden="true" focusable="false"><defs><linearGradient id="bwx-g" gradientUnits="userSpaceOnUse" x1="0" y1="12" x2="0" y2="105"><stop offset="0" stop-color="#FFE58A"/><stop offset=".55" stop-color="#FFD24D"/><stop offset="1" stop-color="#C98F00"/></linearGradient><mask id="bwx-m"><rect width="140" height="140" fill="#fff"/><circle cx="60" cy="72" r="15" fill="#000"/></mask></defs><g fill="url(#bwx-g)" mask="url(#bwx-m)"><polygon points="45,12 45,76 27,76 27,30"/><circle cx="60" cy="72" r="33"/></g></svg><span>Part of <b>bWalletX</b></span><span class="bwx-go" aria-hidden="true">&rarr;</span></a></aside>
-<header class="wrap nav">
-  <a class="brand" href="/" aria-label="bGitX home"><img src="/logo.svg" alt="" width="22" height="30"><span>bGit<span class="gold">X</span></span></a>
-  <nav class="nav-links" aria-label="Main">
-    <a class="hide-s" href="#how">How it works</a>
-    <a class="hide-s" href="#safe">Your OK</a>
-    <a class="hide-s" href="#status">Status</a>
-    <a class="btn btn-gold" href="https://www.bchatx.com/user/kintsugi">Connect your repos</a>
-  </nav>
-</header>
+<aside class="xs-strip" aria-label="bWalletX"><a href="https://bwalletx.com"><svg viewBox="23 8 74 100" aria-hidden="true" focusable="false"><defs><linearGradient id="xs-sg" gradientUnits="userSpaceOnUse" x1="0" y1="12" x2="0" y2="105"><stop offset="0" stop-color="#FFE58A"/><stop offset=".55" stop-color="#FFD24D"/><stop offset="1" stop-color="#C98F00"/></linearGradient></defs><path fill="url(#xs-sg)" d="M45 12V72H27V30Z M27 72a33 33 0 1 1 66 0a33 33 0 1 1-66 0Z M45 72a15 15 0 1 0 30 0a15 15 0 1 0-30 0Z"/></svg><span>Part of <b>bWalletX</b></span><span class="xs-go" aria-hidden="true">&rarr;</span></a></aside>
 
 <main>
-<div class="wrap hero">
-  <div>
-    <p class="eyebrow">bGitX · built on bWalletX</p>
-    <h1>Your code,<br><span>on b.</span></h1>
-    <p class="lede">Connect your GitHub. Give each repo a room, the people who work on it, and terms everyone signed. Kintsugi fixes and builds by opening pull requests. Nothing merges without your OK.</p>
-    <div class="ctas">
-      <a class="btn btn-gold" href="https://www.bchatx.com/user/kintsugi">Connect your repos</a>
-      <a class="btn btn-ghost" href="https://www.bwalletx.com">Get bWalletX</a>
-    </div>
-    <p class="hint">Connecting repos and repo rooms work <span class="ink">today</span>. Encrypted on-chain snapshots are <span class="ink">coming</span>.</p>
-  </div>
-
+<section class="xs-top" id="top" aria-labelledby="xs-h1">
+  <header class="xs-wrap xs-nav"><a class="xs-brand" href="/" aria-label="bGitX home"><svg viewBox="23 8 74 100" aria-hidden="true" focusable="false"><path fill="currentColor" d="M45 12V72H27V30Z M27 72a33 33 0 1 1 66 0a33 33 0 1 1-66 0Z M45 72a15 15 0 1 0 30 0a15 15 0 1 0-30 0Z"/></svg><span><span class="xs-sr">b</span><span class="xs-nm">Git</span><i>X</i></span></a><nav class="xs-links" aria-label="Main"><a class="xs-hs" href="#how">How it works</a><a class="xs-hs" href="#safe">Your OK</a><a class="xs-hs" href="#status">Status</a><a class="xs-btn xs-gold" href="https://www.bchatx.com/user/kintsugi">Connect your repos</a></nav></header>
+  <div class="xs-wrap xs-in"><h1 class="xs-h1" id="xs-h1"><svg class="xs-hb" viewBox="23 8 74 100" aria-hidden="true" focusable="false"><path fill="currentColor" d="M45 12V72H27V30Z M27 72a33 33 0 1 1 66 0a33 33 0 1 1-66 0Z M45 72a15 15 0 1 0 30 0a15 15 0 1 0-30 0Z"/></svg><span class="xs-sr">b</span><span class="xs-nm rx-g">GitX</span></h1><p class="xs-lede">Your code, on b. Give each repo a room, the people who work on it and terms everyone signed. Kintsugi fixes and builds by pull request, and nothing merges without your OK.</p><div class="xs-ctas"><a class="xs-btn xs-ghost" href="#how">How it works</a><a class="xs-btn xs-gold" href="https://www.bchatx.com/user/kintsugi">Connect your repos</a></div></div>
+  <div class="art">
   <div class="flm">
     <div class="stg" data-s="7" role="img" aria-label="Animation of the bGitX loop with a fictional repo. You connect GitHub and pick three repos. Coming soon: you mint a private, encrypted snapshot of one repo on chain. You open a room for it in bChatX and invite two collaborators. You all sign the terms in bSignX. Kintsugi opens a pull request fixing a bug, tests pass, and it merges only when you press OK.">
       <div class="bar"><i></i><i></i><i></i><span>bgitx</span></div>
@@ -324,97 +104,70 @@ footer{border-top:1px solid #121317;padding:40px 0 56px;color:var(--dim);font-si
       <li data-b="6">Kintsugi</li>
     </ol>
   </div>
-</div>
+  </div>
+  <div class="rx-ghost" aria-hidden="true">GITX</div><div class="rx-lb" aria-hidden="true"></div>
+</section>
 
-<section id="how">
-  <div class="wrap">
-    <p class="kicker">How it works</p>
-    <h2>Six steps from repo <span class="gold">to shipped.</span></h2>
-    <p class="sub">Your code stays yours. bGitX adds a room, the people, the terms and a builder that asks before it merges.</p>
-    <ol class="steps">
-      <li><div><h3>Connect your GitHub</h3><p>Pick the repos b can see. Nothing else is touched. You can disconnect any time.</p></div><span class="tag live">Live</span></li>
-      <li><div><h3>Mint your repo</h3><p>A snapshot of the repo will be sealed on chain, encrypted to your keys and private by default. Showing it to anyone will be a separate step you choose.</p></div><span class="tag soon">Coming</span></li>
-      <li><div><h3>Open a room for it</h3><p>Each repo gets its own room in bChatX. Talk about the code where the code lives.</p></div><span class="tag live">Live</span></li>
-      <li><div><h3>Invite collaborators</h3><p>Bring in the people who work on it. A repo token records who owns and worked on the code, and gives access to the room.</p></div><span class="tag test">Testing</span></li>
-      <li><div><h3>Agree terms with bSignX</h3><p>Who did what, who can merge, who gets access. Written down and signed by everyone in the room before work starts.</p></div><span class="tag test">Testing</span></li>
-      <li><div><h3>Kintsugi fixes and builds</h3><p>Report a bug or ask for a feature. Kintsugi works in a branch and opens a pull request. You review it. Nothing merges without your OK.</p></div><span class="tag live">Live</span></li>
-    </ol>
+<div class="marq" aria-hidden="true"><div class="mtrack"><div class="mset"><span>Connect your repos</span><i></i><span>A room for every repo</span><i></i><span>Terms everyone signed</span><i></i><span>Pull requests, not pushes</span><i></i><span>Nothing merges without your OK</span><i></i><span>Narrow access</span><i></i><span>Built on bWalletX</span><i></i></div><div class="mset"><span>Connect your repos</span><i></i><span>A room for every repo</span><i></i><span>Terms everyone signed</span><i></i><span>Pull requests, not pushes</span><i></i><span>Nothing merges without your OK</span><i></i><span>Narrow access</span><i></i><span>Built on bWalletX</span><i></i></div></div></div>
+
+<section class="sec how" id="how" aria-labelledby="how-h">
+  <div class="head"><div><span class="kick mono">How it works</span><h2 id="how-h">Six steps from repo <span>to shipped.</span></h2><p class="sub">Your code stays yours. bGitX adds a room, the people, the terms and a builder that asks before it merges.</p></div></div>
+  <ol class="steps six">
+    <li><span class="n" aria-hidden="true">1</span><h3>Connect your GitHub</h3><p>Pick the repos b can see. Nothing else is touched. You can disconnect any time.</p><span class="s lv">Live</span></li>
+    <li><span class="n" aria-hidden="true">2</span><h3>Mint your repo</h3><p>A snapshot of the repo will be sealed on chain, encrypted to your keys and private by default. Showing it to anyone will be a separate step you choose.</p><span class="s">Coming</span></li>
+    <li><span class="n" aria-hidden="true">3</span><h3>Open a room for it</h3><p>Each repo gets its own room in bChatX. Talk about the code where the code lives.</p><span class="s lv">Live</span></li>
+    <li><span class="n" aria-hidden="true">4</span><h3>Invite collaborators</h3><p>Bring in the people who work on it. A repo token records who owns and worked on the code, and gives access to the room.</p><span class="s on">Testing</span></li>
+    <li><span class="n" aria-hidden="true">5</span><h3>Agree terms with bSignX</h3><p>Who did what, who can merge, who gets access. Written down and signed by everyone in the room before work starts.</p><span class="s on">Testing</span></li>
+    <li><span class="n" aria-hidden="true">6</span><h3>Kintsugi fixes and builds</h3><p>Report a bug or ask for a feature. Kintsugi works in a branch and opens a pull request. You review it. Nothing merges without your OK.</p><span class="s lv">Live</span></li>
+  </ol>
+  <p class="note"><span><b>Nothing merges without your OK.</b> Kintsugi works on a branch and opens a pull request. You read the diff and the test results, and only your OK lands it.</span></p>
+</section>
+
+<section class="sec" id="safe" aria-labelledby="safe-h" style="padding-top:0">
+  <div class="head"><div><span class="kick mono">Your OK, every time</span><h2 id="safe-h">A builder that <span>asks first.</span></h2><p class="sub">Kintsugi is the repair engine behind b. It does the work. You keep the say.</p></div></div>
+  <div class="feats six">
+    <div><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v12"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg></span><h3>Pull requests, not pushes</h3><p>Every change arrives as a pull request on a branch. You read the diff and the test results before anything lands.</p></div>
+    <div><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><h3>Nothing merges without your OK</h3><p>No silent commits to main. No surprise deploys.</p></div>
+    <div><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></span><h3>Narrow access</h3><p>Kintsugi sees only the repos you pick. It holds no production secrets, no deploy rights and no wallet keys.</p></div>
+    <div><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span><h3>No passwords in chat</h3><p>We never ask for your passwords or keys. Secrets stay in your hosting, set by you.</p></div>
+    <div><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg></span><h3>Private by default</h3><p>When snapshots arrive, each one will be encrypted to your keys. Making one public will be a separate, deliberate step.</p></div>
+    <div><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 2.4 18a2 2 0 0 0 1.7 3h15.8a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg></span><h3>Security reports stay private</h3><p>They skip the queue and are never shown in a room.</p></div>
   </div>
 </section>
 
-<section id="safe">
-  <div class="wrap">
-    <p class="kicker">Your OK, every time</p>
-    <h2>A builder that <span class="gold">asks first.</span></h2>
-    <p class="sub">Kintsugi is the repair engine behind b. It does the work. You keep the say.</p>
-    <ul class="points">
-      <li><span class="dot"></span><span><b>Pull requests, not pushes.</b> Every change arrives as a pull request on a branch. You read the diff and the test results before anything lands.</span></li>
-      <li><span class="dot"></span><span><b>Nothing merges without your OK.</b> No silent commits to main. No surprise deploys.</span></li>
-      <li><span class="dot"></span><span><b>Narrow access.</b> Kintsugi sees only the repos you pick. It holds no production secrets, no deploy rights and no wallet keys.</span></li>
-      <li><span class="dot"></span><span><b>No passwords in chat.</b> We never ask for your passwords or keys. Secrets stay in your hosting, set by you.</span></li>
-      <li><span class="dot"></span><span><b>Private by default.</b> When snapshots arrive, each one will be encrypted to your keys. Making one public will be a separate, deliberate step.</span></li>
-      <li><span class="dot"></span><span><b>Security reports stay private.</b> They skip the queue and are never shown in a room.</span></li>
-    </ul>
+<section class="status" id="status" aria-labelledby="st-h">
+  <h2 class="sr" id="st-h">Status</h2>
+  <div class="st">
+    <div><h3 class="mono"><i></i>Live today</h3>
+      <ul><li><b>Connect your repos to Kintsugi.</b> Report bugs and ask for features; Kintsugi opens pull requests. <a href="https://www.bchatx.com/user/kintsugi">Connect your repos</a></li><li><b>Repo rooms in bChatX.</b> One room per repo, with its collaborators. <a href="https://www.bchatx.com">Open bChatX</a></li><li><b>bWalletX</b>, your own wallet, on web, iPhone, Android, desktop and Chrome. <a href="https://bwalletx.com/get">Get it</a></li></ul></div>
+    <div class="nx"><h3 class="mono"><i></i>Next</h3>
+      <ul><li><b>Repo tokens</b> (testing): a record of who owns and worked on the code, and access to the room.</li><li><b>Contributor splits</b> (testing): worked out from the repo&#39;s history, agreed in bSignX.</li><li><b>Encrypted on-chain repo snapshots</b>, private by default.</li><li><b>GitLab import.</b></li><li><b>bDojoX.</b></li></ul></div>
   </div>
 </section>
 
-<section id="family">
-  <div class="wrap">
-    <p class="kicker">Part of the b*X family</p>
-    <h2>Works with the rest of <span class="gold">b.</span></h2>
-    <div class="links">
-      <a href="https://www.bwalletx.com"><b>bWallet<i>X</i></b>Your keys, your signatures, your minted snapshots. Where you say OK.</a>
-      <a href="https://www.bchatx.com"><b>bChat<i>X</i></b>A room for every repo. Talk to your collaborators and to Kintsugi.</a>
-      <a href="https://bsignx.com"><b>bSign<i>X</i></b>Terms for the repo, signed by everyone in the room.</a>
-    </div>
-  </div>
-</section>
-
-<section id="status">
-  <div class="wrap">
-    <p class="kicker">Status</p>
-    <h2>Live, testing, and coming.</h2>
-    <p class="sub">Items move to Live when you can use them.</p>
-    <ul class="status">
-      <li><span class="tag live">Live</span><p><b>Connect your repos to Kintsugi.</b> Report bugs and ask for features; Kintsugi opens pull requests. <span class="where"><a href="https://www.bchatx.com/user/kintsugi">www.bchatx.com/user/kintsugi</a></span></p></li>
-      <li><span class="tag live">Live</span><p><b>Repo rooms in bChatX.</b> One room per repo, with its collaborators. <span class="where">bChatX</span></p></li>
-      <li><span class="tag test">Testing</span><p><b>Repo tokens.</b> A record of who owns and worked on the code, and access to the room.</p></li>
-      <li><span class="tag test">Testing</span><p><b>Contributor splits.</b> Worked out from the repo's history, agreed in bSignX.</p></li>
-      <li><span class="tag soon">Coming</span><p><b>Encrypted on-chain repo snapshots</b>, private by default.</p></li>
-      <li><span class="tag soon">Coming</span><p><b>GitLab import.</b></p></li>
-      <li><span class="tag soon">Coming</span><p><b>bDojoX.</b></p></li>
-    </ul>
-  </div>
-</section>
-
-<section id="get">
-  <div class="wrap">
-    <p class="kicker">Start here</p>
-    <h2>Bring your code <span class="gold">on b.</span></h2>
-    <p class="sub">Connect your repos to Kintsugi in bChatX. Get bWalletX to sign and approve.</p>
-    <div class="cta-end">
-      <a class="btn btn-gold" href="https://www.bchatx.com/user/kintsugi">Connect your repos</a>
-      <a class="btn btn-ghost" href="https://www.bwalletx.com">Get bWalletX</a>
-    </div>
+<section class="sec cta" id="get" aria-labelledby="get-h">
+  <div class="cta-in">
+    <h2 id="get-h"><span>Bring your code</span>on b.</h2>
+    <p>Connect your repos to Kintsugi in bChatX. Get bWalletX to sign and approve.</p>
+    <div class="ctas"><a class="btn btn-gold" href="https://www.bchatx.com/user/kintsugi">Connect your repos</a><a class="btn btn-glass" href="https://bwalletx.com/get">Get bWalletX</a></div>
+    <p class="also">Talk about the code in <a href="https://www.bchatx.com">bChatX</a>, and sign the terms in <a href="https://bsignx.com">bSignX</a>.</p>
   </div>
 </section>
 </main>
 
 <footer>
-  <div class="wrap foot">
-    <a class="brand" href="/"><img src="/logo.svg" alt="" width="18" height="24"><span>bGit<span class="gold">X</span></span></a>
-    <nav aria-label="Footer">
-      <a href="https://bwalletx.com/b-family">Part of the bWalletX family</a>
-      <a href="https://www.bwalletx.com">bWalletX</a>
-      <a href="https://www.bchatx.com">bChatX</a>
-      <a href="https://bsignx.com">bSignX</a>
-      <a href="https://bwalletx.com/privacy">Privacy</a>
-      <a href="https://bwalletx.com/terms">Terms</a>
-    </nav>
+  <div class="foot">
+    <a class="brand" href="/" aria-label="bGitX home"><svg viewBox="23 8 74 100" aria-hidden="true" focusable="false"><path fill="currentColor" d="M45 12V72H27V30Z M27 72a33 33 0 1 1 66 0a33 33 0 1 1-66 0Z M45 72a15 15 0 1 0 30 0a15 15 0 1 0-30 0Z"/></svg><span>bGit<i>X</i></span></a>
+    <nav aria-label="Footer"><a href="https://bwalletx.com/b-family">Part of the bWalletX family</a><a href="https://bwalletx.com">bWalletX</a><a href="https://www.bchatx.com">bChatX</a><a href="https://bsignx.com">bSignX</a><a href="https://bwalletx.com/privacy">Privacy</a><a href="https://bwalletx.com/terms">Terms</a></nav>
   </div>
-  <div class="wrap"><p class="legal">The Bitcoin Corporation Ltd, company no. 16735102. bGitX is software for managing code, collaborators and agreed terms. It does not offer, sell or recommend any investment.</p></div>
+  <p class="legal">The Bitcoin Corporation Ltd, company no. 16735102. bGitX is software for managing code, collaborators and agreed terms. It does not offer, sell or recommend any investment.</p>
 </footer>
+
+<div class="dock" id="dock"><a class="btn btn-gold" href="https://www.bchatx.com/user/kintsugi">Connect your repos</a></div>
+
 <script>
+(function(){var d=document.getElementById('dock'),t=document.getElementById('top');if(!d||!t)return;
+function f(){d.classList.toggle('on',t.getBoundingClientRect().bottom<0)}addEventListener('scroll',f,{passive:true});f()})();
 (function(){var s=document.querySelector('.stg');if(!s)return;
 if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
 var rail=[].slice.call(document.querySelectorAll('.rail li'));
