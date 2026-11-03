@@ -1,5 +1,7 @@
 # bGitX.com
 
+**Licence: [Open BSV License version 4](LICENSE)**, © The Bitcoin Corporation Ltd. (GitHub labels it "Other" because it is not on GitHub's standard licence list.)
+
 Marketing site for **bGitX**, your code on b. By The Bitcoin Corporation Ltd. Static HTML, same house pattern as bsignx-site.
 
 Loop: connect GitHub → mint a private, encrypted repo snapshot → open a bChatX room → invite collaborators → agree terms in bSignX → Kintsugi opens pull requests; nothing merges without the owner's OK.
